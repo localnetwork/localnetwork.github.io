@@ -1,0 +1,19 @@
+// All your variable will be placed here.
+$min-sm: 576px;
+$min-md: 768px;
+$min-lg: 992px;
+$min-xl: 1200px;
+
+$max-sm: 575px;
+$max-md: 767px;
+$max-lg: 991px;
+$max-xl: 1199px;
+
+
+
+$min-breakpoint: ( 
+'sm' : $min-sm,
+'md' : $min-md,
+'lg' : $min-lg,
+'xl' : $min-xl,
+);

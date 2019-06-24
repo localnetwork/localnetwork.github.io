@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diome Nike Potot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet"> 
+    <link href="css/style.css" rel="stylesheet">
+    <script> 
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  } 
+};
+</script> 
+</head> 
+<div w3-include-html="header.html"></div>
+<body id="body" class="body no-skrollr"> 
+ 
+<main id="skrollr-body" class="to-load">
+<section class="block block-colored position-relative o-hidden align-items-center d-flex justify-content-center" data-0="background-color:rgb(0,201,147);" data-400="background-color:rgb(74,173,255);" data-1000="background-color:rgb(74,173,255);translateY(-80%)" data-1300="background-color:rgb(0,201,147);" style="height:100vh;width: 100%;">
+    <!-- <img src="assets/bg.jpg" class="w-100" style="height:100vh;object-fit: cover;">  -->
+  <h2 class="text-white p-2 fs40 fs50-md fs70-lg fs100-xl d-flex align-items-center">
+    &#60;
+    <div class="typewrite mr8 ml5 mr15-md mr20-lg" data-period="2000" data-type='[ "Design", "Develop", "Deploy"]'>
+      <span class="wrap"></span>
+    </div> 
+     / &#62;
+  </h2>    
+<div class="icon icon-laptop drop skrollable skrollable-between" data-0="bottom: 5%;" data-350="bottom: 55%;" ></div> 
+<div class="icon icon-rocket skrollable skrollable-between" data-0="top:50px; left:-2%; opacity: .3;transform: rotate(80deg);" data-200="top:300px; left:5%; opacity:.5;transform: rotate(150deg);" data-350="top:550px;left:-30%;transform: rotate(180deg);"></div>
+
+<div class="icon icon-fish" data-0="left: 1%;" data-300="left:50%;" data-450="left:100%;"></div>
+</section>
+<section class="block block-recent skrollable skrollable-between p50" style="min-height: 100vh;background-color:#f5f5f5;">
+  <h2 class="block__title text-uppercase text-center fs40 tc-grey fw700 mb50">Portfolio</h2>
+  <div class="item-lists row">
+      <div class="item col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="item-wrapper">
+            <figure class="graf-figure item__image">
+              <div class="aspectRatioPlaceholder">
+                <div class="aspectRatioPlaceholder-fill"></div>
+                <div class="progressiveMedia lazyload" data-width="400" data-height="300">
+                  <img class="progressiveMedia-thumbnail" src="assets/projects/vivere-10.jpg" />
+                  <canvas class="progressiveMedia-canvas"></canvas>
+                  <img class="progressiveMedia-image lazyload h-100 of-cover" data-srcset="assets/projects/vivere-450.jpg"/>
+                </div>
+              </div> 
+            </figure>
+
+            <div class="item-details">
+              <h3 class="item__title fs20">Vivere Hotel</h3> 
+              <ul class="list-unstyled tags">
+                <li class="tag frontend">
+                  Frontend 
+                </li>
+                <li class="tag site-building">
+                  Drupal
+                </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+  </div> 
+</section> 
+
+
+<section class="skrollable block block-contact pt100 pb80 px100 text-white text-center d-flex flex-column align-items-center justify-content-center" style="background-color: #222222;">
+
+  <h2 class="block__title fs50 fw700">Interested?</h2>
+  <div class="block__rm mt30">
+    <a class="fs20 py20 px30 text-uppercase text-white" href="https://www.facebook.com/messages/t/localnetwork" target="_blank">Send a message</a> 
+  </div>
+</section>
+
+   
+</main>
+<footer>
+
+</footer>
+<script 
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+ <script src="libraries/pure-media/progressive-image-loading.js"></script>
+ <script src="libraries/lazysizes/lazysizes.min.js"></script> 
+ 
+<script src="libraries/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>  
+<script type="text/javascript"> 
+  includeHTML(); 
+  (function ($){ 
+    console.log('1'); 
+    var s = skrollr.init();  
+  })(jQuery); 
+  var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+
+</script>
+</body>
+</html>

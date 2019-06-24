@@ -1,0 +1,148 @@
+$colors: (
+   'white' : #ffffff,
+   'grey': #222222,
+); 
+@each $name, $val in $colors {
+    .tc-#{$name} {color: $val;}
+}
+
+$overflows: (hidden,inherit);
+@each $name in $overflows {
+    .o-#{$name} {overflow: $name} 
+}
+
+// FONT SIZES default from 0 to 100
+
+@for $i from 0 through 100 {
+    .fs#{$i} {font-size: #{$i}px!important; }
+    // RESPONSIVE PATTERN .fs(value)-(breakpoint)
+    // fontsizeclass(value/number)-(breakpoint)
+    @each $breakpoint, $value in $min-breakpoint {
+        @media (min-width : #{$value}) {
+            .fs#{$i}-#{$breakpoint} { font-size: #{$i}px !important; }
+        }
+    }
+}
+
+$font-weights: (100,300,400,500,600,700);
+@each $i in $font-weights {
+    .fw#{$i} {
+        font-weight: $i;
+    }
+} 
+
+// END FONT SIZES
+$positions: (absolute, relative, static,sticky);
+@each $name in $positions {
+    .ps-#{$name} {position: $name;}
+}
+// Flex direction
+$flex-directions: (column, column-reverse,row,row-reverse,inherit,initial,unset);
+@each $name in $flex-directions {
+    .fd-#{$name} { flex-direction: $name; }
+}
+// Displays
+$display: (block,flex,inline-block,inline-flex,table,grid,none,list-item,unset);
+@each $name in $display {
+    .d-#{$name} { display: $name!important; }
+}
+
+$text-transforms: (uppercase, lowercase,capitalize);
+@each $name in $text-transforms {
+
+    // Global
+    .text-#{$name} {text-transform: $name;}
+}
+@for $y from 0 through 200 {
+    $sides: (top, bottom, left, right);
+    .mx#{$y} {
+        margin-left: #{$y}px!important;
+        margin-right: #{$y}px!important;
+    }
+    .my#{$y} {
+        margin-top: #{$y}px!important;
+        margin-bottom: #{$y}px!important;
+    }
+    .m#{$y} { margin: #{$y}px!important;}
+    .p#{$y} { padding: #{$y}px!important;}
+    .px#{$y} {
+        padding-left: #{$y}px!important;
+        padding-right: #{$y}px!important;
+    }
+    .py#{$y} {
+        padding-top: #{$y}px!important;
+        padding-bottom: #{$y}px!important;
+    }
+
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}#{$y} { margin-#{$side}: #{$y}px!important; }
+        .p#{str-slice($side, 0, 1)}#{$y} { padding-#{$side}: #{$y}px!important; }
+    }
+}
+
+@for $y from 1 through 100 {
+    .rn-#{$y} {
+        margin-left: -#{$y}px;
+        margin-right: -#{$y}px;
+        display: flex;
+        flex-wrap: wrap; 
+    }
+} 
+@each $breakpoint, $value in $min-breakpoint {
+    @media (min-width : #{$value}) {
+        // Text Transforms
+        @each $name in $text-transforms {
+            .text-#{$name}-#{$breakpoint} {text-transform: $name;}
+        }
+        // Displays
+        @each $name in $display {
+            .d-#{$name}-#{$breakpoint} { display: $name!important; }
+        }
+        // Flex Directions
+        @each $name in $flex-directions {
+            .fd-#{$name}-#{$breakpoint} { flex-direction: $name; }
+        }
+        // Positions
+        @each $name in $positions {
+            .ps-#{$name}-#{$breakpoint} {position: $name;} 
+        }
+    }
+
+    @for $y from 0 through 200 {
+      @media (min-width : #{$value}) {
+
+        .rn-#{$y}-#{$breakpoint} {
+            margin-left: -#{$y}px;
+            margin-right: -#{$y}px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        $sides: (top, bottom, left, right);
+        @each $side in $sides {
+            .m#{str-slice($side, 0, 1)}#{$y}-#{$breakpoint} { margin-#{$side}: #{$y}px!important; }
+            .p#{str-slice($side, 0, 1)}#{$y}-#{$breakpoint} { padding-#{$side}: #{$y}px!important; }
+        }
+
+
+
+        .m#{$y}-#{$breakpoint} { margin: #{$y}px!important;}
+        .p#{$y}-#{$breakpoint} { padding: #{$y}px!important;}
+        .mx#{$y}-#{$breakpoint} {
+            margin-left: #{$y}px!important;
+            margin-right: #{$y}px!important;
+        }
+        .my#{$y}-#{$breakpoint} {
+            margin-top: #{$y}px!important;
+            margin-bottom: #{$y}px!important;
+        }
+        .px#{$y}-#{$breakpoint} {
+            padding-left: #{$y}px!important;
+            padding-right: #{$y}px!important;
+        }
+        .py#{$y}-#{$breakpoint} {
+            padding-top: #{$y}px!important;
+            padding-bottom: #{$y}px!important;
+        }
+      }
+    }
+}
