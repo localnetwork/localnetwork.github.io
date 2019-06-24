@@ -100,9 +100,6 @@ function includeHTML() {
 
    
 </main>
-<footer>
-
-</footer>
 <script 
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
@@ -115,8 +112,33 @@ function includeHTML() {
 <script type="text/javascript"> 
   includeHTML(); 
   (function ($){ 
-    console.log('1'); 
-    var s = skrollr.init();  
+    console.log('skrollr update'); 
+
+    // var s = skrollr.init({
+    //   forceHeight: false, 
+    //   render: function(data) {
+    //       forceHeight: false; 
+    //   }   
+    // });  
+
+    var s = skrollr.init({
+      forceHeight: false, 
+render: function(data) {
+
+            //Debugging - Log the current scroll position.
+            console.log(data.curTop);
+        },
+
+        smoothScrolling: true,
+        smoothScrollingDuration: 500,
+                    easing: {
+            WTF: Math.random,
+            inverted: function(p) {
+                return 1-p;
+            }
+        }
+    });
+
   })(jQuery); 
   var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
